@@ -20,10 +20,6 @@ router.post('/', function(req, res) {
     })
 });
 
-//     devoured: req.body.devoured
-//   }, condition, function() {
-//     res.redirect("/");
-
 router.put('/:id', function(req, res) {
     db.Burgers.update({ devoured: req.body.devoured }, {
         fields: ['devoured'],
@@ -32,40 +28,5 @@ router.put('/:id', function(req, res) {
     	res.redirect('/burgers')
     });
 });
-
-
-// var burgers = require('../models/burgers.js');
-
-// router.get('/', function (req, res) {
-//     burgers.selectAll(function (data) {
-//         var hbsObject = {
-//             burgerss: data
-//         };
-//         console.log(hbsObject);
-//         res.render("index", hbsObject);
-//     });
-// });
-
-// router.post("/", function (req, res) {
-//     burgers.create([
-//         "burgers_name"
-//     ], [
-//             req.body.bname,
-//         ], function () {
-//             res.redirect("/");
-//         });
-// });
-
-// router.put("/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
-
-//   console.log("condition", condition);
-
-//   burgers.update({
-//     devoured: req.body.devoured
-//   }, condition, function() {
-//     res.redirect("/");
-//   });
-// });
 
 module.exports = router;
