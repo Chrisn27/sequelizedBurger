@@ -4,7 +4,8 @@
   "description": "eat da burger",
   "main": "server.js",
   "scripts": {
-    "test": "no"
+    "test": "no",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
