@@ -7,7 +7,7 @@ router.get('/', function (req, res) {
 });
 
 
-router.get("/burgers", function (req, res) {
+router.get('/burgers', function (req, res) {
     db.Burgers.findAll({}).then(function (data) {
         var hbsObject = { "burgers": data };
         res.render('index', hbsObject);
@@ -16,7 +16,7 @@ router.get("/burgers", function (req, res) {
 
 router.post('/', function(req, res) {
     db.Burgers.create({ burger_name: req.body.bname }).then(function(data) {
-        res.redirect('/burgers')
+        res.redirect('/burgers');
     })
 });
 
@@ -25,7 +25,7 @@ router.put('/:id', function(req, res) {
         fields: ['devoured'],
         where: { id: req.params.id }
     }).then(function(data) {
-    	res.redirect('/burgers')
+    	res.redirect('/burgers');
     });
 });
 
